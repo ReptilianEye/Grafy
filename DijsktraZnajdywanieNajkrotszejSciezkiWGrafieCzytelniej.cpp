@@ -34,7 +34,7 @@ int main()
     int *tablicaWag = new int[n];
     vector<vector<Wierzcholek>> listaSasiedztwa; // Tablica list sąsiedztwa
 
-    // Odczytujemy dane wejściowe
+    // przygotowanie tablicy danych
     for (i = 0; i < n; i++)
     { 
         tablicaKosztowD[i] = MAXINT;
@@ -43,6 +43,7 @@ int main()
         vector<Wierzcholek> a;
         listaSasiedztwa.push_back(a);
     }
+    // Odczytujemy dane wejściowe
     for (i = 0; i < m; i++)
     {
         cin >> x >> y >> w; // Odczytujemy krawędź z wagą
@@ -71,7 +72,6 @@ int main()
         QS[u] = true; // Znaleziony wierzchołek przenosimy do S
 
         // Modyfikujemy odpowiednio wszystkich sąsiadów u, którzy są w Q
-
         for (int k = 0; k < listaSasiedztwa[u].size(); k++)
             if (!QS[listaSasiedztwa[u][k].gdzieProwadzi] && (tablicaKosztowD[listaSasiedztwa[u][k].gdzieProwadzi] > tablicaKosztowD[u] + listaSasiedztwa[u][k].waga))
             {
