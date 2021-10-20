@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "C/C++: g++.exe build active file",
+        "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+        "args": [
+          "-std=c++11",
+          "-g",
+          "${file}",
+          "-o",
+          "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+          "$gcc"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+       // "key": "alt+shift+t",
+        "label": "Wykonaj-Wszystkie-Testy",
+        "detail": "Prepare some ENV variables for the deployment",
+        "type": "shell",
+        "command": "c:\\Users\\piotr\\Programowanie\\Oceniarka\\Oceniarka.ps1",
+        
+        "args": [
+          "${fileDirname}\\${fileBasenameNoExtension}.exe",
+          "${fileDirname}"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      }
+    ]
+    
+  }
